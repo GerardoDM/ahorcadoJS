@@ -1,0 +1,16 @@
+#contenedor
+{
+    margin-top: 100px;
+    background-color: black;
+   
+}
+
+#contenedor span{
+    font-size: 100px;
+    color: white;
+}
+
+body
+{
+    background-color: lightslategray;
+}
