@@ -11,7 +11,7 @@ console.log(palabra);
 //Separar la palabra en arreglo de caracteres
 var palabraseparada = palabra.split("");
 
-//Hacer un div por cada char
+//Hacer un span por cada char
 $.each(palabraseparada, function(index, value) {
   $('<span />', {
     "text": "_"  +  "  "
@@ -24,33 +24,67 @@ console.log(intentos)
 
 
 
+//$(".letra").click(function() {
+
+  //  var letraclick = $(this).attr("value")
+
+    // $.each(palabraseparada, function(index, letra) {
+
+      // if (letraclick == letra){
+
+        // document.getElementsByTagName('span')[index].innerHTML = letraclick;
+
+       
+       //}
+
+    // else {
+
+      // intentos -= 1;
+
+      //}
+
+      //})
+
+      //console.log(intentos);
+
+    //})
+
+//});
+
+
+
 
 $(".letra").click(function() {
 
     var letraclick = $(this).attr("value")
 
-     $.each(palabraseparada, function(index, letra) {
+    if(palabra.indexOf(letraclick) != -1) {
 
-       if (letraclick == letra){
+      for(var i=0; i<palabra.length; i++) {
 
-         document.getElementsByTagName('span')[index].innerHTML = letraclick;
+        if(palabra[i]==letraclick)
 
-         intentos  = 3;
+    {
 
-           console.log(intentos)
-       }
+      document.getElementsByTagName('span')[i].innerHTML = letraclick;
 
-      if (letraclick != letra){
+    }
+      }
 
-          intentos -= 1
-          alert("Error")
+    alert('si encontrada')
+    
 
-          console.log(intentos)
-       }
+    }
+    else
+    {
+    intentos --
+      alert("Tienes" + intentos)
+      
+    }
 
-      })
+        
+       
 
     })
 
 });
-
